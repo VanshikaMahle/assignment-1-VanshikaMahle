@@ -86,16 +86,22 @@ public class List {
         return null;
     }
 
-
-    public int size() {
-        var current = first;
-        int index = 1;
-        while (current.getNext() != null) {
-            current = current.getNext();
-            index++;
+    public void deleteNode(int position) {
+        if (first == null)
+            return;
+        Node temp = first;
+        if (position == 0) {
+            first = temp.getNext();
+            return;
         }
-        return index;
+        for (int i = 0; temp != null && i < position - 1; i++)
+            temp = temp.getNext();
+        if (temp == null || temp.getNext() == null)
+            return;
+        Node next = temp.getNext().getNext();
+        temp.setNext(next);
     }
+
 
     public void display() {
         var current = first;
