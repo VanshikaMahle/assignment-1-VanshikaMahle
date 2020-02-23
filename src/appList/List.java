@@ -38,6 +38,13 @@ public class List {
         return response;
     }
 
+    public boolean exist(String firstName) {
+        if (indexOf(firstName) != -1) {
+            return true;
+        }
+        return false;
+    }
+
 
     public int indexOf(String firstName) {
         Node currently = first;
