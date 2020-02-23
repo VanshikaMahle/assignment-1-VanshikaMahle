@@ -73,14 +73,6 @@ public class Task {
         }
     }
 
-    public void viewcontact(List linkedList1) {
-        System.out.println("---Here are all your contacts---");
-        if (!linkedList1.isEmpty()) {
-            linkedList1.display();
-        } else {
-            System.out.println("NO results found");
-        }
-    }
 
     public void deleteContact(List linkedList1) {
         if (!linkedList1.isEmpty()) {
