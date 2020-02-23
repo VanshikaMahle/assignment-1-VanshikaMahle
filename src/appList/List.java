@@ -59,15 +59,6 @@ public class List {
         return -1;
     }
 
-    public void removeFirst() {
-        if (first == last) {
-            first = null;
-            last = null;
-        } else {
-            Node second = first.getNext();
-            first = second;
-        }
-    }
 
     public void removeLast() {
         var previousNode = getPreviousNode(last);
