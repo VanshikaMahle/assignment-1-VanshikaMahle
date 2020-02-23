@@ -69,17 +69,12 @@ public class List {
         }
     }
 
-
-    private Node getPreviousNode(Node node) {
-        var current = first;
-        while (current.getNext() != null) {
-            if (current.getNext() == node) {
-                return current;
-            }
-            current = current.getNext();
-        }
-        return null;
+    public void removeLast() {
+        var previousNode = getPreviousNode(last);
+        last = previousNode;
+        last.setNext(null);
     }
+
 
     public void deleteNode(int position) {
         if (first == null)
