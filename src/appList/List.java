@@ -102,22 +102,16 @@ public class List {
         temp.setNext(next);
     }
 
-
-    public void display() {
+    public int size() {
         var current = first;
-        System.out.println("Contact list--->");
-        System.out.println();
-        while (current != null) {
-            System.out.println("-----------------------*-------------------------");
-            System.out.println("Name:" + current.getValue().getFirstName() + " " + current.getValue().getLastName());
-            System.out.println("Contacts:" + current.getValue().getContacts().toString());
-            System.out.println("Email:" + current.getValue().getEmail());
-            System.out.println("------------------------*-------------------------");
-            System.out.println();
+        int index = 1;
+        while (current.getNext() != null) {
             current = current.getNext();
+            index++;
         }
-        System.out.println();
+        return index;
     }
+
 
     public void displayOne() {
         var current = first;
