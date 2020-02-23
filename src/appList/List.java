@@ -75,22 +75,17 @@ public class List {
         last.setNext(null);
     }
 
-
-    public void deleteNode(int position) {
-        if (first == null)
-            return;
-        Node temp = first;
-        if (position == 0) {
-            first = temp.getNext();
-            return;
+    private Node getPreviousNode(Node node) {
+        var current = first;
+        while (current.getNext() != null) {
+            if (current.getNext() == node) {
+                return current;
+            }
+            current = current.getNext();
         }
-        for (int i = 0; temp != null && i < position - 1; i++)
-            temp = temp.getNext();
-        if (temp == null || temp.getNext() == null)
-            return;
-        Node next = temp.getNext().getNext();
-        temp.setNext(next);
+        return null;
     }
+
 
     public int size() {
         var current = first;
